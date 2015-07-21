@@ -62,11 +62,13 @@ function fruitPriceUpdates() {
 	$('.pear > .price').text("$" + fruitPrices[3][1]);
 // console.log("pears price: " + fruitPrices[1][1] + "pears indicator: " + fruitPrices[1][2]);
 }
-
+fruitPriceUpdates(fruitPrices);
 //this will call the fruitPriceUpdates function each 15 seconds
-setInterval('fruitPriceUpdates(fruitPrices);', 15000);
+setInterval('fruitPriceUpdates(fruitPrices);', 1000);
 
 $(document).ready(function(){
+
+	$('.cash').text("$" + User.cash);
 	$(".buy-apple").on('click', function(){
 		User.numCurrentApples++;
 		User.totalNumApples++;
